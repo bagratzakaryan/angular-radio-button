@@ -1,0 +1,31 @@
+<label [attr.for]="inputId" class="app-radio-label" #labelRef>
+  <span class="app-radio-container">
+    <input
+      #input
+      class="app-radio-input"
+      type="radio"
+      [id]="inputId"
+      [checked]="checked"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [attr.name]="name"
+      [attr.value]="value"
+      [required]="required"
+      (change)="_onInputInteraction($event)"
+      (click)="_onInputClick($event)"
+    />
+    <span class="app-radio-outer-circle">
+      <span class="app-radio-inner-circle"></span>
+    </span>
+  </span>
+  <span class="app-radio-label-content"
+    >{{ label }}<ng-content></ng-content
+  ></span>
+</label>
+
+<app-icon
+  class="app-radio-tooltip"
+  name="info"
+  *ngIf="infoTooltip"
+  [infoTooltip]="infoTooltip"
+></app-icon>
